@@ -182,15 +182,6 @@ h6 {
   overflow-y: auto;
 }
 
-#header {
-  transition: all ease-in-out 0.5s;
-  z-index: 9997;
-  transition: all 0.5s;
-  padding: 0 15px;
-  background: #040b14;
-  overflow-y: auto;
-}
-
 .container,
 .container-fluid {
   padding-left: 30px;
@@ -776,7 +767,6 @@ section {
   width: auto;
   padding-right: 20px 15px;
 }
-
 
 #footer .copyright {
   text-align: center;
