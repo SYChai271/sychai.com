@@ -2,7 +2,7 @@
   "use strict";
 
   /**
-   * Easy selector helper function
+   * selector helper function
    */
   const select = (el, all = false) => {
     el = el.trim();
@@ -14,7 +14,7 @@
   };
 
   /**
-   * Easy event listener function
+   * event listener function
    */
   const on = (type, el, listener, all = false) => {
     let selectEl = select(el, all);
@@ -28,14 +28,14 @@
   };
 
   /**
-   * Easy on scroll event listener
+   * on scroll event listener
    */
   const onscroll = (el, listener) => {
     el.addEventListener("scroll", listener);
   };
 
   /**
-   * Navbar links active state on scroll
+   * set state active for navbar links on scroll
    */
   let navbarlinks = select("#navbar .scrollto", true);
   const navbarlinksActive = () => {
