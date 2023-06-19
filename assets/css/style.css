@@ -298,14 +298,23 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/WhatsApp Image 2023-05-31 at 14.32.32.jpg") top center;
+  background: url("../img/hero-l.jpg") top center;
   background-size: cover;
 }
 @media (max-width: 991px) {
   #hero {
     width: 100%;
     height: 100vh;
-    background: url("../img/W1hatsApp Image 2023-05-31 at 14.32.32.jpg") top
+    background: url("../img/hero-m.jpg") top
+      center;
+    background-size: cover;
+  }
+}
+@media (max-width: 576px) {
+  #hero {
+    width: 100%;
+    height: 100vh;
+    background: url("../img/hero-s") top
       center;
     background-size: cover;
   }
