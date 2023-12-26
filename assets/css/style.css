@@ -345,6 +345,14 @@ h6 {
   color: #fff;
 }
 
+#hero h2 {
+  margin: 0 0 10px 0;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+
 #hero p {
   color: #fff;
   margin-bottom: 50px;
@@ -367,14 +375,18 @@ h6 {
 
 @media (max-width: 991px) {
   #hero h1 {
-    font-size: 28px;
+    font-size: 30px;
     line-height: 36px;
   }
 
   #hero h2 {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  
+  #hero p {
+    font-size: 20px;
     line-height: 24px;
-    margin-bottom: 30px;
   }
 }
 
