@@ -44,10 +44,7 @@
       if (!navbarlink.hash) return;
       let section = select(navbarlink.hash);
       if (!section) return;
-      if (
-        position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
-      ) {
+      if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
         navbarlink.classList.add("active");
       } else {
         navbarlink.classList.remove("active");
@@ -61,7 +58,8 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    let elementPos = window.screen.availWidth <= 991 ? select(el).offsetTop : select(el).offsetTop - 72;
+    let elementPos =
+      window.screen.availWidth <= 991 ? select(el).offsetTop : select(el).offsetTop - 72;
     window.scrollTo({
       top: elementPos,
       behavior: "smooth",
