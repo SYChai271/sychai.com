@@ -113,14 +113,27 @@
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-      <div class="hero-container mt-5 pt-5" data-aos="fade-in">
-        <h2>Hi, I'm</h2>
-        <h1>Shao Yang,</h1>
-        <p>
-          A
-          <span class="typed" data-typed-items="Student, Developer, Learner"></span>
-        </p>
+    <section
+      id="hero"
+      class="d-flex flex-column justify-content-between align-items-left container"
+    >
+      <div class="hero-container justify-content-between align-items-center row" data-aos="fade-in">
+        <div class="col-md-6">
+          <p><span>Hi, my name is</span></p>
+          <h1>Chai Shao Yang.</h1>
+          <h2>I am a Student Developer</h2>
+          <p>
+            I'm an innovative and eager learner who focuses on developing effective solutions for
+            real-world problems.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <img
+            src="/assets/img/icons/undraw_programming_re_kg9v.svg"
+            alt=""
+            class="img-fluid dim"
+          />
+        </div>
       </div>
     </section>
     <!-- End Hero -->
@@ -132,17 +145,18 @@
           <div class="section-title">
             <h2>About</h2>
             <p>
-              Hi, my name is Shao Yang. As an eager learner, I hope to expand my knowledge
-              especially in the field of Math and Science. I enjoy learning about the newest
-              technology and I do my best to be up-to-date with the latest developments, be it
-              Artificial Intelligence, robotics, or anything in between. I am innovative and can
-              come up with effective solutions to address new problems that may arise.
+              Hi, my name is Shao Yang. As an <span>eager learner</span>, I hope to expand my
+              knowledge especially in the field of <span>Math and Science</span>. I enjoy learning
+              about the newest technology and I do my best to be up-to-date with the latest
+              developments, be it Artificial Intelligence, robotics, or anything in between. I am
+              innovative and can come up with
+              <span>effective solutions to address new problems that may arise</span>.
             </p>
           </div>
 
-          <div class="row">
+          <div class="row justify-content-between">
             <div class="col-md-4" data-aos="fade-right">
-              <img src="assets/img/profile-img.png" class="img-fluid" alt="" />
+              <img src="assets/img/profile-img.png" class="img-fluid dim" alt="" />
             </div>
             <div class="col-md-8 pt-4 pt-md-0 content" data-aos="fade-left">
               <h3>Profile</h3>
@@ -178,100 +192,15 @@
               <p>
                 In my free time, I enjoy doing several activities such as programming, gaming with
                 friends as well as listening to music. My passion for programming and creating
-                useful tools prompted me to join the Robotics Club CCA in secondary school. There, I
-                was able to continue to develop this interest and take up various leadership
-                positions, most notably, CCA Vice-Chairperson.
+                useful tools prompted me to join the <span>Robotics Club CCA</span> in secondary
+                school. There, I was able to continue to develop this interest and take up various
+                leadership positions, most notably, <span>CCA Vice-Chairperson</span>.
               </p>
             </div>
           </div>
         </div>
       </section>
       <!-- End About Section -->
-
-      <!-- ======= Skills Section ======= -->
-      <section id="skills" class="skills section-bg">
-        <div class="container">
-          <div class="section-title">
-            <h2>Skills</h2>
-            <p>
-              Over the years, I have been refining my computing skills through working on projects
-              for competitions.
-            </p>
-          </div>
-
-          <div class="d-flex align-items-center justify-content-center row">
-            <div class="col-md-6" id="icon" data-aos="fade-up">
-              <img
-                src="assets/img/icons/undraw_programming_re_kg9v.svg"
-                class="img-fluid"
-                id="icon"
-                alt=""
-              />
-            </div>
-            <div class="d-flex flex-column align-items-center text-center col-md-6">
-              <div class="d-flex flex-row" data-aos="fade-up">
-                <div class="p-2">
-                  <h6 id="type">Python</h6>
-                  <img
-                    src="assets/img/icons/python-svgrepo-com.svg"
-                    id="skill"
-                    class="img-fluid zoom"
-                    alt=""
-                  />
-                </div>
-                <div class="p-2">
-                  <h6 id="type">Robotics</h6>
-                  <img
-                    src="assets/img/icons/robots-svgrepo-com.svg"
-                    id="skill"
-                    class="img-fluid zoom"
-                    alt=""
-                  />
-                </div>
-                <div class="p-2">
-                  <h6 id="type">Git</h6>
-                  <img
-                    src="assets/img/icons/git-svgrepo-com.svg"
-                    id="skill"
-                    class="img-fluid zoom"
-                    alt=""
-                  />
-                </div>
-              </div>
-              <div class="d-flex flex-row" data-aos="fade-up">
-                <div class="p-2">
-                  <h6 id="type">HTML</h6>
-                  <img
-                    src="assets/img/icons/html-5-svgrepo-com.svg"
-                    id="skill"
-                    class="img-fluid zoom"
-                    alt=""
-                  />
-                </div>
-                <div class="p-2">
-                  <h6 id="type">CSS</h6>
-                  <img
-                    src="assets/img/icons/css-3-svgrepo-com.svg"
-                    id="skill"
-                    class="img-fluid zoom"
-                    alt=""
-                  />
-                </div>
-                <div class="p-2">
-                  <h6 id="type">Javascript</h6>
-                  <img
-                    src="assets/img/icons/js-svgrepo-com.svg"
-                    id="skill"
-                    class="img-fluid zoom"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Skills Section -->
 
       <!-- ======= Achievements Section ======= -->
       <section id="achievements" class="achievements">
@@ -293,9 +222,13 @@
                 <p>
                   <em
                     >NRC spurs interest and innovation offering students an opportunity to apply
-                    what they learnt in school and experience STEM hands-on through interactive and
-                    meaningful experiences. In the process, students develop skills such as problem
-                    solving, entrepreneurial dare, creative thinking and team spirit.
+                    what they learnt in school and experience
+                    <span>STEM hands-on through interactive and meaningful experiences</span>. In
+                    the process, students develop skills such as
+                    <span
+                      >problem solving, entrepreneurial dare, creative thinking and team
+                      spirit</span
+                    >.
                   </em>
                 </p>
                 <ul>
@@ -311,11 +244,14 @@
                 <h5>2022</h5>
                 <p>
                   <em
-                    >We had to ideate and develop solutions to social issues. Our idea was to create
-                    a game to gamify home gardening to encourage more people to partake in this
-                    activity. In the process, users will gain credits which can be used to support
-                    local produce. This in turn boosts the local food industry which is a step
-                    closer to reaching the 30 by 30 goal.</em
+                    >We had to <span>ideate and develop solutions to social issues</span>. Our idea
+                    was to create a game to
+                    <span
+                      >gamify home gardening to encourage more people to partake in this
+                      activity</span
+                    >. In the process, users will gain credits which can be used to support local
+                    produce. This in turn <span>boosts the local food industry</span> which is a
+                    step closer to reaching the 30 by 30 goal.</em
                   >
                 </p>
                 <li>2nd Place Overall</li>
@@ -326,8 +262,8 @@
                 <p>
                   <em
                     >The Young Technopreneur Challenge, sponsored by HP Inc. and supported by South
-                    West Community Development Council (CDC), aims to support students to take
-                    ownership of the world they live in and actively develop solutions to the UN
+                    West Community Development Council (CDC), aims to support students to <span>take
+                    ownership of the world they live in and actively develop solutions</span> to the UN
                     Sustainable Development Goals, Singapore Green Plan 2030 and Sustainable South
                     West Masterplan.</em
                   >
@@ -354,7 +290,7 @@
               <div class="achievements-item">
                 <h4>44th International CB Paul Science Quiz</h4>
                 <h5>2023</h5>
-                <p><em>Competed in both Preliminary and Final rounds</em></p>
+                <p><em>Competed in both <span>Preliminary and Final rounds</span></em></p>
                 <ul>
                   <li>Individual Gold Award</li>
                   <li>3rd Place Team</li>
@@ -376,7 +312,7 @@
                 <h5>2022</h5>
                 <p>
                   <em
-                    >Innovated on solutions to reduce environmental implications of fast fashion</em
+                    >Innovated on solutions to <span>reduce environmental implications of fast fashion</span></em
                   >
                 </p>
                 <li>Bronze Award</li>
