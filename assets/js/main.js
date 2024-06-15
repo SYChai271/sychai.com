@@ -58,8 +58,7 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    let elementPos =
-      window.screen.availWidth <= 991 ? select(el).offsetTop : select(el).offsetTop - 72;
+    let elementPos = select(el).offsetTop - 36;
     window.scrollTo({
       top: elementPos,
       behavior: "smooth",
