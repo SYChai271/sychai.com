@@ -66,22 +66,6 @@
   };
 
   /**
-   * Back to top button
-   */
-  let backtotop = select(".back-to-top");
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add("active");
-      } else {
-        backtotop.classList.remove("active");
-      }
-    };
-    window.addEventListener("load", toggleBacktotop);
-    onscroll(document, toggleBacktotop);
-  }
-
-  /**
    * Mobile nav toggle
    */
   on("click", ".mobile-nav-toggle", function (e) {
@@ -123,40 +107,7 @@
       }
     }
   });
-
-  /**
-   * Hero type effect
-   */
-  const typed = select(".typed");
-  if (typed) {
-    let typed_strings = typed.getAttribute("data-typed-items");
-    typed_strings = typed_strings.split(",");
-    new Typed(".typed", {
-      strings: typed_strings,
-      loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000,
-    });
-  }
-
-  /**
-   * Skills animation
-   */
-  let skillsContent = select(".skills-content");
-  if (skillsContent) {
-    new Waypoint({
-      element: skillsContent,
-      offset: "80%",
-      handler: function (direction) {
-        let progress = select(".progress .progress-bar", true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute("aria-valuenow") + "%";
-        });
-      },
-    });
-  }
-
+  
   /**
    * Portfolio isotope and filter
    */
@@ -226,9 +177,4 @@
       mirror: false,
     });
   });
-
-  /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
 })();

@@ -31,39 +31,6 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
-.back-to-top {
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 15px;
-  bottom: 15px;
-  z-index: 996;
-  background: #A1B3EE;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  transition: all 0.4s;
-}
-
-.back-to-top i {
-  font-size: 28px;
-  color: #CCD6F6;
-  line-height: 0;
-}
-
-.back-to-top:hover {
-  background: #2eafec;
-  color: #CCD6F6;
-}
-
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
-}
-
-/*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 @media (max-width: 991px) {
@@ -452,42 +419,6 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Skills
---------------------------------------------------------------*/
-#icon {
-  max-width: 100%;
-  height: auto;
-}
-
-#skill {
-  max-width: 100%;
-  height: auto;
-}
-
-.skills #type {
-  text-transform: uppercase;
-  display: block;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #CCD6F6;
-}
-
-.dim {
-  opacity: 0.8;
-  filter: grayscale(1%);
-  -webkit-filter: grayscale(1%);
-}
-
-@media (min-width: 991px) {
-  .skills .zoom:hover {
-    opacity: 1;
-    filter: grayscale(0%);
-    -webkit-filter: grayscale(1%);
-    transform: scale(1.2)
-  }
-}
-
-/*--------------------------------------------------------------
 # achievements
 --------------------------------------------------------------*/
 .achievements .achievements-title {
@@ -717,53 +648,6 @@ section {
 
 .portfolio-details .portfolio-description p {
   padding: 0;
-}
-
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 20px 0;
-  background: #f9f9f9;
-}
-
-.breadcrumbs h2 {
-  font-size: 26px;
-  font-weight: 300;
-}
-
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 15px;
-}
-
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #0e2442;
-  content: "/";
-}
-
-@media (max-width: 991px) {
-  .breadcrumbs .d-flex {
-    display: block !important;
-  }
-
-  .breadcrumbs ol {
-    display: block;
-  }
-
-  .breadcrumbs ol li {
-    display: inline-block;
-  }
 }
 
 /*--------------------------------------------------------------
