@@ -107,7 +107,7 @@
       }
     }
   });
-  
+
   /**
    * Portfolio isotope and filter
    */
