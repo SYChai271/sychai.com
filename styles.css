@@ -424,6 +424,27 @@ section {
   margin-bottom: 0;
 }
 
+.btn-resume {
+  background-color: #CCD6F6; /* Theme color (adjust as needed) */
+  color: black;
+  padding: 10px 20px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(78, 115, 223, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-resume:hover {
+  background-color: #A1B3EE;
+  box-shadow: 0 6px 12px rgba(46, 89, 217, 0.3);
+  text-decoration: none;
+  color: black;
+}
+
 /*--------------------------------------------------------------
 # achievements
 --------------------------------------------------------------*/
