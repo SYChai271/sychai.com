@@ -425,8 +425,8 @@ section {
 }
 
 .btn-resume {
-  background-color: #CCD6F6; /* Theme color (adjust as needed) */
-  color: black;
+  background-color: #212431; /* Theme color (adjust as needed) */
+  color: #CCD6F6;
   padding: 10px 20px;
   border-radius: 30px;
   border: none;
@@ -436,13 +436,14 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  font-weight:bold;
 }
 
 .btn-resume:hover {
   background-color: #A1B3EE;
   box-shadow: 0 6px 12px rgba(46, 89, 217, 0.3);
   text-decoration: none;
-  color: black;
+  color: #CCD6F6;
 }
 
 /*--------------------------------------------------------------
