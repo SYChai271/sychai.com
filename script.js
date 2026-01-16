@@ -1,9 +1,6 @@
 (function () {
   "use strict";
 
-  /**
-   * Simple selector helper
-   */
   const select = (el, all = false) => {
     el = el.trim();
     return all
@@ -11,9 +8,6 @@
       : document.querySelector(el);
   };
 
-  /**
-   * Simple event‑binder helper
-   */
   const on = (type, el, listener, all = false) => {
     let els = select(el, all);
     if (!els) return;
@@ -21,15 +15,9 @@
     else els.addEventListener(type, listener);
   };
 
-  /**
-   * Scroll helper
-   */
   const onscroll = (el, listener) => el.addEventListener("scroll", listener);
 
-  /**
-   * Navbar link highlighting on scroll
-   */
-  let navbarlinks = select("#navbar .scrollto", true);
+  let navbarlinks = select("#navbar .scrollto, #navbar-mobile .scrollto", true);
   const navbarlinksActive = () => {
     let position = window.scrollY + 200;
     navbarlinks.forEach((link) => {
@@ -47,26 +35,33 @@
   window.addEventListener("load", navbarlinksActive);
   onscroll(document, navbarlinksActive);
 
-  /**
-   * Smooth scroll to an element
-   */
   const scrollto = (el) => {
     let offset = select(el).offsetTop - 36;
     window.scrollTo({ top: offset, behavior: "smooth" });
   };
 
-  /**
-   * Mobile nav toggle
-   */
   on("click", ".mobile-nav-toggle", function () {
     document.body.classList.toggle("mobile-nav-active");
     this.classList.toggle("bi-list");
     this.classList.toggle("bi-x");
   });
 
-  /**
-   * Smooth scroll on nav‑link clicks
-   */
+
+  const portfolioItems = select('.portfolio-wrap', true);
+  if (portfolioItems) {
+    portfolioItems.forEach(item => {
+      item.addEventListener('click', function() {
+        this.classList.toggle('mobile-active');
+        
+        portfolioItems.forEach(otherItem => {
+          if (otherItem !== this) {
+            otherItem.classList.remove('mobile-active');
+          }
+        });
+      });
+    });
+  }
+
   on(
     "click",
     ".scrollto",
@@ -85,18 +80,12 @@
     true
   );
 
-  /**
-   * Scroll on load if URL has hash
-   */
   window.addEventListener("load", () => {
     if (window.location.hash && select(window.location.hash)) {
       scrollto(window.location.hash);
     }
   });
 
-  /**
-   * Portfolio isotope & filters
-   */
   window.addEventListener("load", () => {
     let container = select(".portfolio-container");
     if (container) {
@@ -117,14 +106,8 @@
     }
   });
 
-  /**
-   * GLightbox
-   */
   const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
 
-  /**
-   * Swiper for details slider
-   */
   new Swiper(".portfolio-details-slider", {
     speed: 400,
     loop: true,
@@ -132,9 +115,6 @@
     pagination: { el: ".swiper-pagination", type: "bullets", clickable: true },
   });
 
-  /**
-   * AOS init
-   */
   window.addEventListener("load", () => {
     AOS.init({ duration: 1000, easing: "ease-in-out", once: true, mirror: false });
   });
@@ -154,12 +134,10 @@
       src.type = "video/mp4";
       video.appendChild(src);
 
-      // ensure autoplay, muted, loop
       video.autoplay = true;
       video.muted = true;
       video.loop = true;
 
-      // load and play
       video.load();
       video.play().catch((err) => {
         console.warn("Video play was prevented:", err);
@@ -167,12 +145,9 @@
     });
   }
 
-  // run on initial load
   document.addEventListener("DOMContentLoaded", injectVideoSources);
-  // re‑run on resize (desktop resize / rotate)
   window.addEventListener("resize", injectVideoSources);
 
-  // also hook into GLightbox so lightbox videos autoplay too
   if (portfolioLightbox && typeof portfolioLightbox.on === "function") {
     portfolioLightbox.on("open", injectVideoSources);
     portfolioLightbox.on("slide_changed", injectVideoSources);
