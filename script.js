@@ -17,7 +17,7 @@
 
   const onscroll = (el, listener) => el.addEventListener("scroll", listener);
 
-  let navbarlinks = select("#navbar .scrollto, #navbar-mobile .scrollto", true);
+  let navbarlinks = select(".nav .nav__link, .nav--mobile .nav__link", true);
   const navbarlinksActive = () => {
     let position = window.scrollY + 200;
     navbarlinks.forEach((link) => {
@@ -42,12 +42,12 @@
 
   on("click", ".mobile-nav-toggle", function () {
     document.body.classList.toggle("mobile-nav-active");
-    this.classList.toggle("bi-list");
-    this.classList.toggle("bi-x");
+    this.classList.toggle("bx-list");
+    this.classList.toggle("bx-x");
   });
 
 
-  const portfolioItems = select('.portfolio-wrap', true);
+  const portfolioItems = select('.portfolio__card', true);
   if (portfolioItems) {
     portfolioItems.forEach(item => {
       item.addEventListener('click', function() {
@@ -64,15 +64,15 @@
 
   on(
     "click",
-    ".scrollto",
+    ".nav__link",
     function (e) {
       if (select(this.hash)) {
         e.preventDefault();
         if (document.body.classList.contains("mobile-nav-active")) {
           document.body.classList.remove("mobile-nav-active");
           let btn = select(".mobile-nav-toggle");
-          btn.classList.toggle("bi-list");
-          btn.classList.toggle("bi-x");
+          btn.classList.toggle("bx-list");
+          btn.classList.toggle("bx-x");
         }
         scrollto(this.hash);
       }
@@ -87,13 +87,13 @@
   });
 
   window.addEventListener("load", () => {
-    let container = select(".portfolio-container");
+    let container = select(".portfolio__grid");
     if (container) {
-      let iso = new Isotope(container, { itemSelector: ".portfolio-item" });
-      let filters = select("#portfolio-filters li", true);
+      let iso = new Isotope(container, { itemSelector: ".portfolio__item" });
+      let filters = select(".portfolio__filters li", true);
       on(
         "click",
-        "#portfolio-filters li",
+        ".portfolio__filters li",
         function (e) {
           e.preventDefault();
           filters.forEach((el) => el.classList.remove("filter-active"));
@@ -106,7 +106,7 @@
     }
   });
 
-  const portfolioLightbox = GLightbox({ selector: ".portfolio-lightbox" });
+  const portfolioLightbox = GLightbox({ selector: ".portfolio__lightbox" });
 
   new Swiper(".portfolio-details-slider", {
     speed: 400,

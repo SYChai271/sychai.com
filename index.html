@@ -32,23 +32,23 @@
 
   <body>
     <!-- ======= Mobile nav toggle button ======= -->
-    <i class="bx bx-menu mobile-nav-toggle d-lg-none"></i>
+    <i class="bx bx-menu mobile-nav-toggle"></i>
 
     <!-- ======= Header ======= -->
     <header id="header">
-      <div class="d-flex flex-column">
-        <div class="profile d-block d-md-none">
+      <div class="header__wrapper">
+        <div class="header__profile">
           <img
             src="assets/chai_shao_yang.webp"
             alt="chai shao yang"
-            class="img-fluid rounded-circle"
+            class="header__profile-image"
             width="120"
             height="120"
             loading="lazy"
             decoding="async"
           />
-          <h1 class="text-light"><a href="#">Chai Shao Yang</a></h1>
-          <div class="social-links mt-3 text-center">
+          <h1 class="header__name"><a href="#">Chai Shao Yang</a></h1>
+          <div class="social-links header__social header__social--centered">
             <a href="mailto:shaoyangchai@gmail.com" target="_blank" class="email"
               ><i class="bx bx-envelope"></i
             ></a>
@@ -61,53 +61,53 @@
           </div>
         </div>
 
-        <nav id="navbar-mobile" class="nav-menu navbar d-block d-lg-none">
+        <nav id="navbar-mobile" class="nav--mobile">
           <ul>
             <li>
-              <a href="#hero" class="nav-link scrollto active"
+              <a href="#hero" class="nav__link active"
                 ><i class="bx bx-home"></i> <span>Home</span></a
               >
             </li>
             <li>
-              <a href="#about" class="nav-link scrollto"
+              <a href="#about" class="nav__link"
                 ><i class="bx bx-user"></i> <span>About</span></a
               >
             </li>
             <li>
-              <a href="#achievements" class="nav-link scrollto"
+              <a href="#achievements" class="nav__link"
                 ><i class="bx bx-trophy"></i> <span>Achievements</span></a
               >
             </li>
             <li>
-              <a href="#portfolio" class="nav-link scrollto"
+              <a href="#portfolio" class="nav__link"
                 ><i class="bx bx-book-content"></i> <span>Projects</span></a
               >
             </li>
           </ul>
         </nav>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-custom" id="navbar">
+        <nav class="nav nav--fixed" id="navbar">
           <div class="container">
-            <a href="#" class="navbar-brand">Chai Shao Yang</a>
+            <a href="#" class="nav__brand">Chai Shao Yang</a>
 
-            <div class="collapse navbar-collapse" id="navmenu">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a href="#hero" class="nav-link scrollto active"
+            <div class="nav__collapse" id="navmenu">
+              <ul class="nav__list">
+                <li class="nav__item">
+                  <a href="#hero" class="nav__link active"
                     ><i class="bx bx-home"></i> <span>Home</span></a
                   >
                 </li>
-                <li class="nav-item">
-                  <a href="#about" class="nav-link scrollto"
+                <li class="nav__item">
+                  <a href="#about" class="nav__link"
                     ><i class="bx bx-user"></i> <span>About</span></a
                   >
                 </li>
-                <li class="nav-item">
-                  <a href="#achievements" class="nav-link scrollto"
+                <li class="nav__item">
+                  <a href="#achievements" class="nav__link"
                     ><i class="bx bx-trophy"></i> <span>Achievements</span></a
                   >
                 </li>
-                <li class="nav-item">
-                  <a href="#portfolio" class="nav-link scrollto"
+                <li class="nav__item">
+                  <a href="#portfolio" class="nav__link"
                     ><i class="bx bx-book-content"></i> <span>Projects</span></a
                   >
                 </li>
@@ -120,12 +120,9 @@
     <!-- End Header -->
 
     <!-- ======= Hero Section ======= -->
-    <section
-      id="hero"
-      class="d-flex flex-column justify-content-between align-items-left container"
-    >
-      <div class="hero-container justify-content-between align-items-center row">
-        <div class="col-md-6">
+    <section id="hero">
+      <div class="hero__container">
+        <div class="hero__content">
           <p><span>Hi, my name is</span></p>
           <h1>Chai Shao Yang.</h1>
           <h2>I am a Student Developer.</h2>
@@ -133,7 +130,7 @@
             I'm an innovative and eager learner who focuses on developing effective solutions for
             <span>real-world problems</span>.
           </p>
-          <div class="social-links mt-3 d-none d-lg-block">
+          <div class="social-links hero__social">
             <a href="mailto:shaoyangchai@gmail.com" target="_blank" class="email"
               ><i class="bx bx-envelope"></i
             ></a>
@@ -145,11 +142,11 @@
             ></a>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="hero__image-wrapper">
           <img
             src="assets/programming.svg"
             alt=""
-            class="img-fluid dim"
+            class="hero__image"
             fetchpriority="high"
             width="800"
             height="600"
@@ -174,11 +171,11 @@
             </p>
           </div>
 
-          <div class="row justify-content-between">
-            <div class="col-md-4" data-aos="fade-right">
+          <div class="about__row">
+            <div class="about__image-wrapper" data-aos="fade-right">
               <img
                 src="assets/chai_shao_yang.webp"
-                class="img-fluid dim"
+                class="about__image"
                 alt="chai shao yang"
                 width="360"
                 height="360"
@@ -186,13 +183,13 @@
                 decoding="async"
               />
             </div>
-            <div class="col-md-8 pt-4 pt-md-0 content" data-aos="fade-left">
+            <div class="about__content" data-aos="fade-left">
               <h3>Profile</h3>
-              <p class="fst-italic">
+              <p class="about__subtitle">
                 Currently, I'm a JC 2 student at Anglo-Chinese Junior College.
               </p>
-              <div class="row">
-                <div class="col-lg-6">
+              <div class="about__details-row">
+                <div class="about__details-col">
                   <ul>
                     <li>
                       <i class="bx bx-chevron-right"></i>
@@ -200,7 +197,7 @@
                     </li>
                   </ul>
                 </div>
-                <div class="col-lg-6">
+                <div class="about__details-col">
                   <ul>
                     <li>
                       <i class="bx bx-chevron-right"></i>
@@ -216,16 +213,16 @@
                 this interest and take up various leadership positions, most notably,
                 <span>CCA Vice-Chairperson</span>. In JC, I continued to hone my skills in
                 programming and engineering, joining the
-                <span>Engineering & Tech Programme Scholarship</span> as well as becoming
+                <span>Engineering &amp; Tech Programme Scholarship</span> as well as becoming
                 <span>Vice-President of my STEM CCA</span>. I also took part in the
                 <span>Nanyang Research Programme</span>, where I utililsed ML to model plant growth
                 based on environmental data collected by IoT sensors. My interest in Competitive
                 Robotics continued, allowing me to clinch a second national title in Robotics and
                 even <span>represent Singapore at the International Final in Türkiye</span>.
               </p>
-              <div class="row mt-4">
-                <div class="col-12">
-                  <a href="assets/resume.pdf" target="_blank" class="btn btn-resume">
+              <div class="about__cta">
+                <div class="about__cta-col">
+                  <a href="assets/resume.pdf" target="_blank" class="about__resume-btn">
                     View Resume <i class="bx bx-link-external" style="font-size:x-large"></i>
                   </a>
                 </div>
@@ -246,11 +243,11 @@
             </p>
           </div>
 
-          <div class="row">
-            <div class="col-md-6" data-aos="fade-up">
-              <h3 class="achievements-title">Computing & Robotics</h3>
-              <div class="achievements-item">
-                <h4>Hack&Roll</h4>
+          <div class="achievements__row">
+            <div class="achievements__column" data-aos="fade-up">
+              <h3 class="achievements__title">Computing &amp; Robotics</h3>
+              <div class="achievements__item">
+                <h4>Hack&amp;Roll</h4>
                 <h5>2026</h5>
                 <p>
                   <em>We built Rewind, an immersive 3D web application that allows users to explore the rich history of Singapore through 
@@ -261,21 +258,21 @@
                   <li>Top 9 Placing</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>National Olympiad in Informatics</h4>
                 <h5>2025</h5>
                 <ul>
                   <li>Silver Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Nanyang Research Programme</h4>
                 <h5>2024 - 2025</h5>
                 <ul>
                   <li>Gold Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>World Robot Olympiad</h4>
                 <h5>2024</h5>
                 <p>
@@ -287,7 +284,7 @@
                   <li>Coder Award (Singapore)</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>National Robotics Competition</h4>
                 <h5>2021</h5>
                 <ul>
@@ -296,15 +293,15 @@
                   <li>2nd in Best Robot Performance</li>
                 </ul>
               </div>
-              <h3 class="achievements-title">Miscellaneous</h3>
-              <div class="achievements-item">
+              <h3 class="achievements__title">Miscellaneous</h3>
+              <div class="achievements__item">
                 <h4>Singapore Youth Festival</h4>
                 <h5>2025</h5>
                 <ul>
                   <li>Distinction (Strings)</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Ngee Ann Polytechnic Social Innovation Hackathon</h4>
                 <h5>2022</h5>
                 <p>
@@ -315,7 +312,7 @@
                   <li>2nd Place</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Young Technopreneur Challenge</h4>
                 <h5>2022</h5>
                 <p>
@@ -327,8 +324,8 @@
                   <li>2nd Place</li>
                 </ul>
               </div>
-              <h3 class="achievements-title">School Awards</h3>
-              <div class="achievements-item">
+              <h3 class="achievements__title">School Awards</h3>
+              <div class="achievements__item">
                 <h4>Honours Day</h4>
                 <h5>2025</h5>
                 <ul>
@@ -337,7 +334,7 @@
                   <li>Service (String Ensemble)</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Founder's Day</h4>
                 <h5>2025</h5>
                 <ul>
@@ -347,7 +344,7 @@
                   <li>Scholastic Merit Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Awards Day</h4>
                 <h5>2023</h5>
                 <ul>
@@ -356,21 +353,21 @@
                   <li>1st in Biology</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>CCA Contribution Award</h4>
                 <h5>2023</h5>
               </div>
             </div>
-            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-              <h3 class="achievements-title">Science & Math</h3>
-              <div class="achievements-item">
+            <div class="achievements__column" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="achievements__title">Science &amp; Math</h3>
+              <div class="achievements__item">
                 <h4>Singapore Physics League</h4>
                 <h5>2025</h5>
                 <ul>
                   <li>Silver Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>International Mathematical Modeling Challenge</h4>
                 <h5>2025</h5>
                 <p>
@@ -383,7 +380,7 @@
                   <li>Honourable Mention (International)</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>International Elementz Fair</h4>
                 <h5>2025</h5>
                 <p><em>Designed an integrated system with IoT sensors and AI to monitor and enhance plant growth.</em></p>
@@ -391,21 +388,21 @@
                   <li>Silver Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Singapore Young Physicists' Tournament</h4>
                 <h5>2025</h5>
                 <ul>
                   <li>Distinction Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>ETPS-NUS Tech for Tomorrow</h4>
                 <h5>2025</h5>
                 <ul>
-                  <li>2nd Place in Energy & Sustainability Theme</li>
+                  <li>2nd Place in Energy &amp; Sustainability Theme</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>44th CB Paul Science Quiz</h4>
                 <h5>2023</h5>
                 <p>
@@ -416,21 +413,21 @@
                   <li>3rd Place Team</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Singapore Junior Chemistry Olympiad</h4>
                 <h5>2023</h5>
                 <ul>
                   <li>Bronze Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Singapore Junior Physics Olympiad</h4>
                 <h5>2023</h5>
                 <ul>
                   <li>Bronze Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>International STEM Olympiad</h4>
                 <h5>2022</h5>
                 <p><em>Competed in Science Segment</em></p>
@@ -438,14 +435,14 @@
                   <li>Bronze Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Singapore and Asian schools Math Olympiad</h4>
                 <h5>2022</h5>
                 <ul>
                   <li>Bronze Award</li>
                 </ul>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Singapore Mathematical Olympiad</h4>
                 <h5>2021</h5>
                 <p><em>Competed in junior section</em></p>
@@ -453,19 +450,19 @@
                   <li>Silver Award</li>
                 </ul>
               </div>
-              <h3 class="achievements-title">Scholarships</h3>
-              <div class="achievements-item">
-                <h4>Engineering & Tech Programme Scholarship</h4>
+              <h3 class="achievements__title">Scholarships</h3>
+              <div class="achievements__item">
+                <h4>Engineering &amp; Tech Programme Scholarship</h4>
                 <h5>2024 - 2025</h5>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>Edusave Scholarship</h4>
                 <h5>2021, 2022, 2023</h5>
                 <p>
                   <em>Achieved top 10%</em>
                 </p>
               </div>
-              <div class="achievements-item">
+              <div class="achievements__item">
                 <h4>EAGLES Award</h4>
                 <h5>2022, 2023</h5>
               </div>
@@ -476,16 +473,16 @@
       <!-- End achievements Section -->
 
       <!-- ======= Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio section-bg">
+      <section id="portfolio" class="portfolio">
         <div class="container">
           <div class="section-title">
             <h2>Projects</h2>
             <p>Lastly, here are some notable projects which I have contributed to.</p>
           </div>
 
-          <div class="row" data-aos="fade-up">
-            <div class="col-lg-12 d-flex justify-content-center">
-              <ul id="portfolio-filters">
+          <div class="portfolio__row" data-aos="fade-up">
+            <div class="portfolio__filters-wrapper">
+              <ul class="portfolio__filters">
                 <li data-filter="*" class="filter-active">All</li>
                 <li data-filter=".filter-app">Games</li>
                 <li data-filter=".filter-robotics">Robotics</li>
@@ -494,28 +491,28 @@
             </div>
           </div>
 
-          <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img src="assets/portfolio/portfolio-1.webp" class="img-fluid" alt="" />
-                <div class="portfolio-links">
+          <div class="portfolio__grid" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio__item filter-app">
+              <div class="portfolio__card">
+                <img src="assets/portfolio/portfolio-1.webp" class="portfolio__image" alt="" />
+                <div class="portfolio__links">
                   <a
                     href="assets/portfolio/portfolio-1.webp"
                     loading="lazy"
                     data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
+                    class="portfolio__lightbox"
                     data-glightbox="title: Chess App; description: .app-desc1"
                     data-desc-position="right"
                     ><i class="bx bx-plus"></i
                   ></a>
                   <div class="glightbox-desc app-desc1">
                     <video
-                      class="d-none d-lg-block"
+                      class="portfolio__video"
                       width="240" height="180"
                       controls muted loop
                       data-src="assets/videos/chess.mp4"
                     ></video>
-                    <p class="mt-3">
+                    <p class="portfolio__text">
                       Chess game that was built using python/pygame. The project was built using
                       object oriented programming, where the board and individual pieces were all defined
                       through objects, with their unique attributes. The pieces also used inheritance
@@ -529,15 +526,15 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/portfolio/portfolio-2.webp" class="img-fluid" alt="" />
-                <div class="portfolio-links">
+            <div class="portfolio__item filter-web">
+              <div class="portfolio__card">
+                <img src="assets/portfolio/portfolio-2.webp" class="portfolio__image" alt="" />
+                <div class="portfolio__links">
                   <a
                     href="assets/portfolio/portfolio-2.webp"
                     loading="lazy"
                     data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
+                    class="portfolio__lightbox"
                     data-glightbox="title: Avis Fashion; description: .web-desc1"
                     ><i class="bx bx-plus"></i
                   ></a>
@@ -545,14 +542,13 @@
                     <p>
                       This was my first web development project after learning the fundamentals.
                       This website was designed to showcase my groups's research and ideas for the
-                      23rd Elementz Science Research Conference & Exhibition. In this project, I
+                      23rd Elementz Science Research Conference &amp; Exhibition. In this project, I
                       applied many concepts which I had learnt such as building a responsive layout
                       using bootstrap, as well as learning how to style images via CSS.
                     </p>
                   </div>
                   <a
                     href="https://avisfashion.netlify.app"
-                    class="text-decoration-none"
                     target="_blank"
                     ><i class="bx bx-link-external"></i
                   ></a>
@@ -566,15 +562,15 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img src="assets/portfolio/portfolio-4.webp" class="img-fluid" alt="" />
-                <div class="portfolio-links">
+            <div class="portfolio__item filter-web">
+              <div class="portfolio__card">
+                <img src="assets/portfolio/portfolio-4.webp" class="portfolio__image" alt="" />
+                <div class="portfolio__links">
                   <a
                     href="assets/portfolio/portfolio-4.webp"
                     loading="lazy"
                     data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
+                    class="portfolio__lightbox"
                     data-glightbox="title: 30by30; description: .web-desc2"
                     ><i class="bx bx-plus"></i
                   ></a>
@@ -588,7 +584,7 @@
                       the website.
                     </p>
                   </div>
-                  <a href="https://30by30.netlify.app" class="text-decoration-none" target="_blank"
+                  <a href="https://30by30.netlify.app" target="_blank"
                     ><i class="bx bx-link-external"></i
                   ></a>
                   <a href="https://github.com/SY-Chai/30by30" target="_blank" title="More Details"
@@ -598,27 +594,27 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-robotics">
-              <div class="portfolio-wrap">
-                <img src="assets/portfolio/portfolio-3.webp" class="img-fluid" alt="" />
-                <div class="portfolio-links">
+            <div class="portfolio__item filter-robotics">
+              <div class="portfolio__card">
+                <img src="assets/portfolio/portfolio-3.webp" class="portfolio__image" alt="" />
+                <div class="portfolio__links">
                   <a
                     href="assets/portfolio/portfolio-3.webp"
                     loading="lazy"
                     data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
+                    class="portfolio__lightbox"
                     data-glightbox="title: NRC 2021; description: .robotics-desc1"
                     data-desc-position="right"
                     ><i class="bx bx-plus"></i
                   ></a>
                   <div class="glightbox-desc robotics-desc1">
                     <video
-                      class="d-none d-lg-block"
+                      class="portfolio__video"
                       width="240" height="180"
                       controls muted loop
                       data-src="assets/videos/IMG_5516.MOV"
                     ></video>
-                    <p class="mt-3">
+                    <p class="portfolio__text">
                       The 2021 mission mainly involved collecting and depositing randomly arranged cars
                       at respective locations while avoiding obstacles like barriers. I learnt various
                       sorting and searching algorithms to optimise the collection of cars and
@@ -635,27 +631,27 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-robotics">
-              <div class="portfolio-wrap">
-                <img src="assets/portfolio/portfolio-5.webp" class="img-fluid" alt="" />
-                <div class="portfolio-links">
+            <div class="portfolio__item filter-robotics">
+              <div class="portfolio__card">
+                <img src="assets/portfolio/portfolio-5.webp" class="portfolio__image" alt="" />
+                <div class="portfolio__links">
                   <a
                     href="assets/portfolio/portfolio-5.webp"
                     loading="lazy"
                     data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
+                    class="portfolio__lightbox"
                     data-glightbox="title: NRC 2022; description: .robotics-desc2"
                     data-desc-position="right"
                     ><i class="bx bx-plus"></i
                   ></a>
                   <div class="glightbox-desc robotics-desc2">
                     <video
-                      class="d-none d-lg-block"
+                      class="portfolio__video"
                       width="240" height="180"
                       controls muted loop
                       data-src="assets/videos/IMG_5517.MOV"
                     ></video>
-                    <p class="mt-3">
+                    <p class="portfolio__text">
                       The 2022 mission involved crossing obstacles as well as detecting various types of objects. 
                       To do so, the robot base was redesigned to be optimal for crossing, and we improved the 
                       sensing algorithm to allow the robot to continue moving while sensing, saving time.  
@@ -671,27 +667,27 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-robotics">
-              <div class="portfolio-wrap">
-                <img src="assets/portfolio/portfolio-6.webp" class="img-fluid" alt="" />
-                <div class="portfolio-links">
+            <div class="portfolio__item filter-robotics">
+              <div class="portfolio__card">
+                <img src="assets/portfolio/portfolio-6.webp" class="portfolio__image" alt="" />
+                <div class="portfolio__links">
                   <a
                     href="assets/portfolio/portfolio-6.webp"
                     loading="lazy"
                     data-gallery="portfolioGallery"
-                    class="portfolio-lightbox"
+                    class="portfolio__lightbox"
                     data-glightbox="title: WRO 2024; description: .robotics-desc3"
                     data-desc-position="right"
                     ><i class="bx bx-plus"></i
                   ></a>
                   <div class="glightbox-desc robotics-desc3">
                     <video
-                      class="d-none d-lg-block"
+                      class="portfolio__video"
                       width="240" height="180"
                       controls muted loop
                       data-src="assets/videos/IMG_7673.mov"
                     ></video>
-                    <p class="mt-3">
+                    <p class="portfolio__text">
                       The 2024 senior mission involved collecting and stacking house objects, as well as sorting them 
                       by colour. It also required crossing obstacles to collect some of the houses. We further improved
                       our robot base from 2022 to make the robot slimmer while also making the crossing more consistent.
@@ -716,7 +712,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
       <div class="container">
-        <div class="copyright">Made by Shao Yang</div>
+        <div class="footer__copyright">Made by Shao Yang</div>
       </div>
     </footer>
     <!-- End  Footer -->
