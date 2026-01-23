@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta name="description" content="Portfolio of Chai Shao Yang, a Student Developer specialising in AI, Robotics, and Web Development." />
 
     <title>Shao Yang's Portfolio</title>
     <link href="assets/icon.png" rel="icon" />
@@ -32,64 +33,38 @@
 
   <body>
     <!-- ======= Mobile nav toggle button ======= -->
-    <i class="bx bx-menu mobile-nav-toggle"></i>
+    <i class="bx bx-menu mobile-nav-toggle" role="button" tabindex="0" aria-label="Toggle Navigation"></i>
 
     <!-- ======= Header ======= -->
     <header id="header">
       <div class="header__wrapper">
-        <div class="header__profile">
-          <img
-            src="assets/chai_shao_yang.webp"
-            alt="chai shao yang"
-            class="header__profile-image"
-            width="120"
-            height="120"
-            loading="lazy"
-            decoding="async"
-          />
-          <h1 class="header__name"><a href="#">Chai Shao Yang</a></h1>
-          <div class="social-links header__social">
-            <a href="mailto:shaoyangchai@gmail.com" target="_blank" class="email"
-              ><i class="bx bx-envelope"></i
-            ></a>
-            <a href="https://www.instagram.com/sy.chai_/" target="_blank" class="instagram"
-              ><i class="bx bxl-instagram"></i
-            ></a>
-            <a href="https://github.com/SY-Chai" target="_blank" class="github"
-              ><i class="bx bxl-github"></i
-            ></a>
-          </div>
-        </div>
-
-        <nav id="navbar-mobile" class="nav--mobile">
-          <ul>
-            <li>
-              <a href="#hero" class="nav__link active"
-                ><i class="bx bx-home"></i> <span>Home</span></a
-              >
-            </li>
-            <li>
-              <a href="#about" class="nav__link"
-                ><i class="bx bx-user"></i> <span>About</span></a
-              >
-            </li>
-            <li>
-              <a href="#achievements" class="nav__link"
-                ><i class="bx bx-trophy"></i> <span>Achievements</span></a
-              >
-            </li>
-            <li>
-              <a href="#portfolio" class="nav__link"
-                ><i class="bx bx-book-content"></i> <span>Projects</span></a
-              >
-            </li>
-          </ul>
-        </nav>
         <nav class="nav nav--fixed" id="navbar">
           <div class="container">
             <a href="#" class="nav__brand">Chai Shao Yang</a>
-
             <div class="nav__collapse" id="navmenu">
+              <div class="header__profile">
+                <img
+                  src="assets/chai_shao_yang.webp"
+                  alt="chai shao yang"
+                  class="header__profile-image"
+                  width="120"
+                  height="120"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h1 class="header__name"><a href="#">Chai Shao Yang</a></h1>
+                <div class="social-links header__social">
+                  <a href="mailto:shaoyangchai@gmail.com" target="_blank" rel="noopener noreferrer" class="email" aria-label="Email"
+                    ><i class="bx bx-envelope"></i
+                  ></a>
+                  <a href="https://www.instagram.com/sy.chai_/" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"
+                    ><i class="bx bxl-instagram"></i
+                  ></a>
+                  <a href="https://github.com/SY-Chai" target="_blank" rel="noopener noreferrer" class="github" aria-label="GitHub"
+                    ><i class="bx bxl-github"></i
+                  ></a>
+                </div>
+              </div>
               <ul class="nav__list">
                 <li class="nav__item">
                   <a href="#hero" class="nav__link active"
@@ -131,13 +106,13 @@
             <span>real-world problems</span>.
           </p>
           <div class="social-links hero__social">
-            <a href="mailto:shaoyangchai@gmail.com" target="_blank" class="email"
+            <a href="mailto:shaoyangchai@gmail.com" target="_blank" rel="noopener noreferrer" class="email" aria-label="Email"
               ><i class="bx bx-envelope"></i
             ></a>
-            <a href="https://www.instagram.com/sy.chai_/" target="_blank" class="instagram"
+            <a href="https://www.instagram.com/sy.chai_/" target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"
               ><i class="bx bxl-instagram"></i
             ></a>
-            <a href="https://github.com/SY-Chai" target="_blank" class="github"
+            <a href="https://github.com/SY-Chai" target="_blank" rel="noopener noreferrer" class="github" aria-label="GitHub"
               ><i class="bx bxl-github"></i
             ></a>
           </div>
@@ -215,14 +190,14 @@
                 programming and engineering, joining the
                 <span>Engineering &amp; Tech Programme Scholarship</span> as well as becoming
                 <span>Vice-President of my STEM CCA</span>. I also took part in the
-                <span>Nanyang Research Programme</span>, where I utililsed ML to model plant growth
+                <span>Nanyang Research Programme</span>, where I utilised ML to model plant growth
                 based on environmental data collected by IoT sensors. My interest in Competitive
                 Robotics continued, allowing me to clinch a second national title in Robotics and
                 even <span>represent Singapore at the International Final in Türkiye</span>.
               </p>
               <div class="about__cta">
                 <div class="about__cta-col">
-                  <a href="assets/resume.pdf" target="_blank" class="about__resume-btn">
+                  <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="about__resume-btn">
                     View Resume <i class="bx bx-link-external" style="font-size:x-large"></i>
                   </a>
                 </div>
@@ -503,6 +478,7 @@
                     class="portfolio__lightbox"
                     data-glightbox="title: Chess App; description: .app-desc1"
                     data-desc-position="right"
+                    aria-label="View Project Details"
                     ><i class="bx bx-plus"></i
                   ></a>
                   <div class="glightbox-desc app-desc1">
@@ -519,7 +495,7 @@
                       and polymorphism for their methods. 
                     </p>
                   </div>
-                  <a href="https://github.com/SY-Chai/chess" target="_blank" title="More Details"
+                  <a href="https://github.com/SY-Chai/chess" target="_blank" rel="noopener noreferrer" title="More Details" aria-label="View Source Code"
                     ><i class="bx bx-link"></i
                   ></a>
                 </div>
@@ -550,12 +526,16 @@
                   <a
                     href="https://avisfashion.netlify.app"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View Live Site"
                     ><i class="bx bx-link-external"></i
                   ></a>
                   <a
                     href="https://github.com/SY-Chai/avisfashion"
                     target="_blank"
+                    rel="noopener noreferrer"
                     title="More Details"
+                    aria-label="View Source Code"
                     ><i class="bx bx-link"></i
                   ></a>
                 </div>
@@ -584,10 +564,10 @@
                       the website.
                     </p>
                   </div>
-                  <a href="https://30by30.netlify.app" target="_blank"
+                  <a href="https://30by30.netlify.app" target="_blank" rel="noopener noreferrer" aria-label="View Live Site"
                     ><i class="bx bx-link-external"></i
                   ></a>
-                  <a href="https://github.com/SY-Chai/30by30" target="_blank" title="More Details"
+                  <a href="https://github.com/SY-Chai/30by30" target="_blank" rel="noopener noreferrer" title="More Details"
                     ><i class="bx bx-link"></i
                   ></a>
                 </div>
@@ -624,7 +604,9 @@
                   <a
                     href="https://github.com/SY-Chai/sy-wro2021"
                     target="_blank"
+                    rel="noopener noreferrer"
                     title="More Details"
+                    aria-label="View Source Code"
                     ><i class="bx bx-link"></i
                   ></a>
                 </div>
@@ -660,7 +642,9 @@
                   <a
                     href="https://github.com/SY-Chai/sy-wro2022"
                     target="_blank"
+                    rel="noopener noreferrer"
                     title="More Details"
+                    aria-label="View Source Code"
                     ><i class="bx bx-link"></i
                   ></a>
                 </div>
@@ -696,7 +680,9 @@
                   <a
                     href="https://github.com/SY-Chai/wro2024"
                     target="_blank"
+                    rel="noopener noreferrer"
                     title="More Details"
+                    aria-label="View Source Code"
                     ><i class="bx bx-link"></i
                   ></a>
                 </div>

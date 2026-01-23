@@ -15,26 +15,27 @@
     else els.addEventListener(type, listener);
   };
 
-  const onscroll = (el, listener) => el.addEventListener("scroll", listener);
+  let navbarlinks = select(".nav .nav__link", true);
 
-  let navbarlinks = select(".nav .nav__link, .nav--mobile .nav__link", true);
-  const navbarlinksActive = () => {
-    let position = window.scrollY + 200;
-    navbarlinks.forEach((link) => {
-      if (!link.hash) return;
-      let section = select(link.hash);
-      if (!section) return;
-      link.classList[
-        position >= section.offsetTop &&
-        position <= section.offsetTop + section.offsetHeight
-          ? "add"
-          : "remove"
-      ]("active");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navbarlinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${entry.target.id}`) {
+             link.classList.add('active');
+          }
+        });
+      }
     });
-  };
-  window.addEventListener("load", navbarlinksActive);
-  onscroll(document, navbarlinksActive);
+  }, {
+    rootMargin: '-50% 0px -50% 0px' 
+  });
 
+  document.querySelectorAll('section').forEach(section => {
+    observer.observe(section);
+  });
+  
   const scrollto = (el) => {
     let offset = select(el).offsetTop - 36;
     window.scrollTo({ top: offset, behavior: "smooth" });
