@@ -1,6 +1,18 @@
 (function () {
   "use strict";
 
+  // Configuration constants
+  const SCROLL_OFFSET = 36; // Offset for fixed header when scrolling to sections
+  const INTERSECTION_ROOT_MARGIN = '-50% 0px -50% 0px'; // Margin for section intersection detection
+  const MIN_VIEWPORT_WIDTH_FOR_VIDEO = 992; // Minimum viewport width for video display
+  const DEBOUNCE_DELAY = 250; // Milliseconds to wait before executing debounced functions
+
+  /**
+   * Select DOM element(s) using a CSS selector
+   * @param {string} el - CSS selector string
+   * @param {boolean} [all=false] - If true, returns all matching elements; otherwise returns first match
+   * @returns {Element|Element[]|null} Selected element(s) or null if not found
+   */
   const select = (el, all = false) => {
     el = el.trim();
     return all
@@ -8,11 +20,32 @@
       : document.querySelector(el);
   };
 
+  /**
+   * Add event listener(s) to element(s) selected by CSS selector
+   * @param {string} type - Event type
+   * @param {string} el - CSS selector string
+   * @param {Function} listener - Event handler function
+   * @param {boolean} [all=false] - If true, adds listener to all matching elements
+   */
   const on = (type, el, listener, all = false) => {
     let els = select(el, all);
     if (!els) return;
     if (all) els.forEach((e) => e.addEventListener(type, listener));
     else els.addEventListener(type, listener);
+  };
+
+  /**
+   * Debounce function execution to limit how often it can be called
+   * @param {Function} func - Function to debounce
+   * @param {number} delay - Delay in milliseconds before function executes
+   * @returns {Function} Debounced function
+   */
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
   };
 
   let navbarlinks = select(".nav .nav__link", true);
@@ -29,15 +62,21 @@
       }
     });
   }, {
-    rootMargin: '-50% 0px -50% 0px' 
+    rootMargin: INTERSECTION_ROOT_MARGIN
   });
 
   document.querySelectorAll('section').forEach(section => {
     observer.observe(section);
   });
   
+  /**
+   * Smooth scroll to element with fixed header offset
+   * @param {string} el - CSS selector or hash of element to scroll to
+   */
   const scrollto = (el) => {
-    let offset = select(el).offsetTop - 36;
+    const element = select(el);
+    if (!element) return;
+    let offset = element.offsetTop - SCROLL_OFFSET;
     window.scrollTo({ top: offset, behavior: "smooth" });
   };
 
@@ -48,18 +87,24 @@
   });
 
 
-  const portfolioItems = select('.portfolio__card', true);
-  if (portfolioItems) {
-    portfolioItems.forEach(item => {
-      item.addEventListener('click', function() {
-        this.classList.toggle('mobile-active');
-        
-        portfolioItems.forEach(otherItem => {
-          if (otherItem !== this) {
-            otherItem.classList.remove('mobile-active');
-          }
-        });
+  // Use event delegation for portfolio items
+  const portfolioGrid = select('.portfolio__grid');
+  if (portfolioGrid) {
+    portfolioGrid.addEventListener('click', function(e) {
+      const portfolioCard = e.target.closest('.portfolio__card');
+      if (!portfolioCard) return;
+
+      const wasActive = portfolioCard.classList.contains('mobile-active');
+
+      // Remove active class from all cards
+      portfolioGrid.querySelectorAll('.portfolio__card').forEach(card => {
+        card.classList.remove('mobile-active');
       });
+
+      // Toggle the clicked card
+      if (!wasActive) {
+        portfolioCard.classList.add('mobile-active');
+      }
     });
   }
 
@@ -76,6 +121,7 @@
           btn.classList.toggle("bx-x");
         }
         scrollto(this.hash);
+        this.blur();
       }
     },
     true
@@ -89,7 +135,7 @@
 
   window.addEventListener("load", () => {
     let container = select(".portfolio__grid");
-    if (container) {
+    if (container && typeof Isotope !== "undefined") {
       let iso = new Isotope(container, { itemSelector: ".portfolio__item" });
       let filters = select(".portfolio__filters li", true);
       on(
@@ -100,36 +146,49 @@
           filters.forEach((el) => el.classList.remove("filter-active"));
           this.classList.add("filter-active");
           iso.arrange({ filter: this.getAttribute("data-filter") });
-          iso.on("arrangeComplete", () => AOS.refresh());
+          if (typeof AOS !== "undefined" && AOS.refresh) {
+            iso.on("arrangeComplete", () => AOS.refresh());
+          }
         },
         true
       );
     }
   });
 
-  const portfolioLightbox = GLightbox({ selector: ".portfolio__lightbox" });
+  const portfolioLightbox = typeof GLightbox !== "undefined"
+    ? GLightbox({ selector: ".portfolio__lightbox" })
+    : null;
 
-  new Swiper(".portfolio-details-slider", {
-    speed: 400,
-    loop: true,
-    autoplay: { delay: 5000, disableOnInteraction: false },
-    pagination: { el: ".swiper-pagination", type: "bullets", clickable: true },
-  });
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".portfolio-details-slider", {
+      speed: 400,
+      loop: true,
+      autoplay: { delay: 5000, disableOnInteraction: false },
+      pagination: { el: ".swiper-pagination", type: "bullets", clickable: true },
+    });
+  }
 
   window.addEventListener("load", () => {
-    AOS.init({ duration: 1000, easing: "ease-in-out", once: true, mirror: false });
+    if (typeof AOS !== "undefined" && AOS.init) {
+      AOS.init({ duration: 1000, easing: "ease-in-out", once: true, mirror: false });
+    }
   });
 
+  /**
+   * Lazy load video sources for videos with data-src attribute
+   * Only loads videos on desktop viewports (min-width: 992px)
+   * Prevents re-injection if source already exists
+   */
   function injectVideoSources() {
-    if (!window.matchMedia("(min-width: 992px)").matches) return;
+    if (!window.matchMedia(`(min-width: ${MIN_VIEWPORT_WIDTH_FOR_VIDEO}px)`).matches) return;
     document.querySelectorAll("video[data-src]").forEach((video) => {
-      // skip if already injected
+      // Skip if already injected
       if (video.querySelector("source")) return;
 
       const url = video.getAttribute("data-src");
       if (!url) return;
 
-      // create and append <source>
+      // Create and append <source> element
       const src = document.createElement("source");
       src.src = url;
       src.type = "video/mp4";
@@ -147,7 +206,7 @@
   }
 
   document.addEventListener("DOMContentLoaded", injectVideoSources);
-  window.addEventListener("resize", injectVideoSources);
+  window.addEventListener("resize", debounce(injectVideoSources, DEBOUNCE_DELAY));
 
   if (portfolioLightbox && typeof portfolioLightbox.on === "function") {
     portfolioLightbox.on("open", injectVideoSources);
